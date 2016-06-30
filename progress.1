@@ -1,0 +1,63 @@
+.TH progress 1 "January 22, 2002" "progress"
+
+.SH NAME
+progress \- report progress of data through a pipe
+
+.SH SYNOPSIS
+.B progress -h
+.PP
+.B progress \fP[\fB-k n \fP|\fB-m n\fP|\fB-g n\fP] [\fB-c c\fP] [\fB-b b\fP]
+.PP
+.br
+
+.SH DESCRIPTION
+.B progress
+is a utility used in a pipe to report progress of data transfer to standard error.
+Command-line arguments specify how frequently to report, what character to use to report,
+and how much buffering to do.
+
+.SH OPTIONS
+.B
+.IP "-k \fPn\fB"
+Print a character to stderr every \fBn\fP kilobytes (1024 bytes).
+.B
+.IP "-m \fPn\fB"
+Print a character to stderr every \fBn\fP megabytes (1024*1024 bytes).
+.B
+.IP "-g \fPn\fB"
+Print a character to stderr every \fBn\fP gigabytes (1024*1024*1024 bytes).
+.B
+.IP "-c \fPc\fB"
+Specity the character to print to sderr.  Default is '.'
+.B
+.IP "-b \fPn\fB"
+Specify the buffer size for read and write.  Default is 131072 bytes.
+.B
+.IP -h 
+Display a help page
+.B
+
+
+.SH USAGE
+
+Using progress without any options prints a '.' every kilobyte (1024 bytes) to stderr.
+
+.SH NOTES
+
+.IP "\fBSpeed Considerations\fP"
+There is a very slight performance decrease when using progress.
+
+
+.SH EXAMPLES
+
+Copy a disk partition, displaying a '.' for progress every megabyte, copying 128KB at a time:
+.PP
+.IP
+.B
+dd if=/dev/hda1 bs=131072b | progress -m 1 | dd bs=131072b of=/dev/hdx2
+
+.SH AUTHOR
+Leigh L. Klotz, Jr. <klotz@graflex.org>
+
+.SH "SEE ALSO"
+\fBdd\fP(1)\fB
