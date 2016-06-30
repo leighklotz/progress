@@ -1,9 +1,10 @@
 CC=gcc
-VERSION=1.0
+VERSION=1.1
+BUILD		= build
 INS		= install
 PROGRAM		= progress
 DESTDIR		=
-PREFIX		= /usr/local
+PREFIX		= /usr/
 INSDIR		= $(PREFIX)/bin
 MANDIR		= $(PREFIX)/man/man1
 MANPAGE		= progress.1
@@ -23,10 +24,8 @@ clean:
 	rm -f progress
 
 
-release:
+rpm:
 	cp progress.spec /usr/src/redhat/SPECS
 	(cd ..; tar czvf /usr/src/redhat/SOURCES/progress-${VERSION}.tar.gz progress-${VERSION})
-
-
 
 .phony:	release
