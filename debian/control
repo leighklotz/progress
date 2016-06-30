@@ -1,0 +1,15 @@
+Source: progress
+Section: Utilities
+Priority: optional
+Maintainer: Leigh L. Klotz Jr. <klotz@graflex.org>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Homepage: http://software.graflex.org/progress
+
+Package: progress
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: report progress of stdio transfer to stderr
+ Progress is a utility used in a pipe to report progress of data transfer to standard error.
+ Command-line arguments specify how frequently to report, what character to use to report,
+ and how much buffering to do.

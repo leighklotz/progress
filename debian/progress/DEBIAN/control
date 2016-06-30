@@ -1,0 +1,13 @@
+Package: progress
+Version: 1.1-1
+Architecture: amd64
+Maintainer: Leigh L. Klotz Jr. <klotz@graflex.org>
+Installed-Size: 50
+Depends: libc6 (>= 2.2.5)
+Section: Utilities
+Priority: optional
+Homepage: http://software.graflex.org/progress
+Description: report progress of stdio transfer to stderr
+ Progress is a utility used in a pipe to report progress of data transfer to standard error.
+ Command-line arguments specify how frequently to report, what character to use to report,
+ and how much buffering to do.
