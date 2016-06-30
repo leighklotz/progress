@@ -24,6 +24,8 @@
 #include <stdio.h> 
 #include <getopt.h> 
 #include <unistd.h> 
+#include <stdlib.h> 
+#include <string.h>
 #include <malloc.h> 
 
 #define DEFAULT_BUFSIZE (131072l)
@@ -126,7 +128,7 @@ void getoptions(int argc, char **argv) {
 void allocateBuffer() {
   buffer = malloc(bufsize);
   if (buffer == NULL) {
-    fprintf(stderr, "failed to allocate buffer of size %l; exiting", bufsize);
+    fprintf(stderr, "failed to allocate buffer of size %ld; exiting", bufsize);
     exit(-1);
   }
 }
@@ -141,7 +143,7 @@ void copyOut() {
       exit(-1);
     }
     if (writecount != readcount) {
-      fprintf(stderr, "read %l but wrote %l; exiting", readcount, writecount);
+      fprintf(stderr, "read %ld but wrote %ld; exiting", readcount, writecount);
     }
     bytecounter -= writecount;
     if (bytecounter <= 0) {
