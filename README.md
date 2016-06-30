@@ -21,6 +21,9 @@ $
 - [Pipeline Viewer](http://linux.die.net/man/1/pv)
 - dd status=progress
 
+## Download
+You can download some precompiled versions here: [progress](https://software.graflex.org/klotz/progress)
+
 ## INSTALL
 ````$ make install PREFIX=/usr/local/````
 
