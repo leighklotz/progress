@@ -15,7 +15,10 @@ $
 
 ## Alternatives
 
-- [http://linux.die.net/man/1/pv](http://linux.die.net/man/1/pv)
+- [pipebench](http://www.habets.pp.se/synscan/programs.php?prog=pipebench)
+- [Progress Bar](https://pypi.python.org/pypi/Pbar)
+- [Command Line Progress Bar](http://clpbar.sourceforge.net/)
+- [Pipeline Viewer](http://linux.die.net/man/1/pv)
 - dd status=progress
 
 ## INSTALL
